@@ -1,0 +1,22 @@
+ALGORITHM checkpoint
+VAR
+    ch:STRING;
+    c:CHAR;
+    nb,nbmot,voy:INTEGER;
+BEGIN
+    ch:="";
+    nb:=0;
+    nbmot:=0;
+    voy := 0;
+    REPEAT
+        Read(c);
+        ch := ch + c;
+        nb:=nb+1;
+        IF (c=" ") THEN
+            nbmot := nbmot + 1;
+        END_IF
+        IF (upper(c) in "AEUIYO") THEN
+            voy := voy + 1;
+        END_IF
+    UNTIL (c = ".")
+END
